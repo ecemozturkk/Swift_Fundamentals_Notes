@@ -1,3 +1,66 @@
+struct Town {
+    let name = "Yellow Town"
+    var citizens = ["Alice", "Mark"]
+    var resources = ["Grain": 10, "Wool": 21]
+    
+    func fortify (){
+        print("Defences increased!")
+    }
+}
+
+var myTown = Town()
+
+print(myTown.citizens)
+myTown.citizens.append("Jessie")
+print(myTown.citizens.count)
+myTown.fortify()
+
+//___________________________________________________________________________________________________________________________
+
+struct Town {
+  let name: String
+  var citizens: [String]
+  var resources: [String: Int]
+  
+  init(townName: String, people: [String], stats: [String: Int]){
+    name = townName
+    citizens = people
+    resources = stats
+  }
+  func fortify() {
+    print ("Defences increased!")
+  }
+}
+var anotherTown = Town(townName:"Green Town", people:["Tom"], stats:["Coconuts": 100])
+anotherTown.citizens.append("Wilson")
+print(anotherTown.citizens)
+
+//___________________________________________________________________________________________________________________________
+
+struct Town {
+  let name: String
+  var citizens: [String]
+  var resources: [String: Int]
+  
+  init(name: String, citizens: [String], resources: [String: Int]){
+    self.name = name
+    self.citizens = citizens
+    self.resources = resources
+  }
+  func fortify() {
+    print ("Defences increased!")
+  }
+}
+var anotherTown = Town(name:"Green Town", citizens:["Tom"], resources:["Coconuts": 100])
+
+var ghostTown = Town(name:"Red Town", citizens:[], resources:["Corn": 10])
+
+anotherTown.citizens.append("Wilson")
+print(anotherTown.citizens)
+ghostTown.fortify()
+
+
+//___________________________________________________________________________________________________________________________
 /*
 [Coding Exercise] Structures
 You are about to create the next big social networking app, exclusive to business leaders called KingPin.
